@@ -1,6 +1,6 @@
 package app.todos.adapter.web.dto
 
-import app.todos.domain.model.Todo
+import app.todos.application.CreateTodoCommand
 
 class TodoRequestDto(private val title: String) {
 
@@ -14,7 +14,5 @@ class TodoRequestDto(private val title: String) {
         return title
     }
 
-    fun convertToTodo(): Todo {
-        return Todo(title = title)
-    }
+    fun toCommand() = CreateTodoCommand(title)
 }

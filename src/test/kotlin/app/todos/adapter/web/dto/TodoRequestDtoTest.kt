@@ -2,6 +2,7 @@ package app.todos.adapter.web.dto
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import kotlin.test.assertEquals
 
 class TodoRequestDtoTest {
 
@@ -17,5 +18,12 @@ class TodoRequestDtoTest {
         val requestDto = TodoRequestDto("create todo")
 
         assert("create todo" == requestDto.getTitle())
+    }
+
+    @Test
+    fun `getTitle`() {
+        val requestDto = TodoRequestDto("getTitle")
+
+        assertEquals("getTitle", requestDto.getTitle())
     }
 }
